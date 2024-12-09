@@ -36,7 +36,8 @@ namespace AnrangoRamosLibrary
             {
                 if (RegexUtilities.IsValidEmail(txtEmail.Text.Trim())) email = txtEmail.Text.Trim();
                 else throw new Exception("Email non formata Correttamente");
-                password = txtPassword.Text;
+                if (RegexUtilities.IsSafePassword(txtPassword.Text)) password = txtPassword.Text;
+                else throw new Exception("Password non Sicura");
                 //if (ValidateCredentials(email, password)) {
                 validCredentials = true;
                 MessageBox.Show("Login Effettuato con Successo!");

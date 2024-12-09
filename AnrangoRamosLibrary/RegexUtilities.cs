@@ -1,11 +1,41 @@
 ﻿using System;
+using System.Drawing.Text;
 using System.Globalization;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AnrangoRamosLibrary
 {
     class RegexUtilities
     {
+        public static bool IsSafePassword(string password)
+        {
+            if (string.IsNullOrEmpty(password))
+                return false;
+
+            bool hasUpperCase = false;
+            bool hasLowerCase = false;
+            bool hasDigit = false;
+            bool hasSpecialChar = false;
+
+            foreach (char c in password)
+            {
+                if (char.IsUpper(c))
+                    hasUpperCase = true;
+                else if (char.IsLower(c))
+                    hasLowerCase = true;
+                else if (char.IsDigit(c))
+                    hasDigit = true;
+                else if (!char.IsLetterOrDigit(c))
+                    hasSpecialChar = true;
+            }
+
+            bool isLongEnough = password.Length >= 8;
+
+            return hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar && isLongEnough;
+        }
+
         public static bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
