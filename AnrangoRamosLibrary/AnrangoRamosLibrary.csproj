@@ -48,7 +48,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RegexUtilities.cs" />
-    <Compile Include="UCDiagrammaClasse.cs" />
+    <Compile Include="UCDiagrammaClasse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UCDiagrammaClasse.Designer.cs">
       <DependentUpon>UCDiagrammaClasse.cs</DependentUpon>
     </Compile>
