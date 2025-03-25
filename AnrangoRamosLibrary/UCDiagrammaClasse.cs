@@ -10,8 +10,13 @@ using System.Windows.Forms;
 
 namespace AnrangoRamosLibrary
 {
+    class UMLfield
+    {
+
+    }
     public partial class UCDiagrammaClasse : UserControl
     {
+
         public UCDiagrammaClasse()
         {
             InitializeComponent();

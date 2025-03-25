@@ -42,12 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RegexUtilities.cs" />
-    <Compile Include="UCDiagrammaClasse.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RegexUtilities.cs" />
+    <Compile Include="UCDiagrammaClasse.cs" />
     <Compile Include="UCDiagrammaClasse.Designer.cs">
       <DependentUpon>UCDiagrammaClasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCLabel.Designer.cs">
+      <DependentUpon>UCLabel.cs</DependentUpon>
     </Compile>
     <Compile Include="UCLogin.cs">
       <SubType>UserControl</SubType>
@@ -59,12 +68,22 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCDiagrammaClasse.resx">
       <DependentUpon>UCDiagrammaClasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCLabel.resx">
+      <DependentUpon>UCLabel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCLogin.resx">
       <DependentUpon>UCLogin.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblBackGround.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

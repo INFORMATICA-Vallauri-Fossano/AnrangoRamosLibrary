@@ -69,7 +69,7 @@
             this.Controls.Add(this.lblClassName);
             this.Controls.Add(this.grbAttributes);
             this.Name = "UCDiagrammaClasse";
-            this.Size = new System.Drawing.Size(190, 282);
+            this.Size = new System.Drawing.Size(190, 247);
             this.ResumeLayout(false);
 
         }
