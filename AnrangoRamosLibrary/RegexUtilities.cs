@@ -9,6 +9,12 @@ namespace AnrangoRamosLibrary
 {
     public class RegexUtilities
     {
+        public static bool IsValidTarga(string targa)
+        {
+            bool ok=false;
+            if(Regex.IsMatch(targa,@"^[A-Z]{2}\d{3}[A-Z]{2}$")) ok=true;
+            return ok;
+        }
         public static bool IsSafePassword(string password)
         {
             if (string.IsNullOrEmpty(password))
