@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace AnrangoRamosLibrary
 {
-    class RegexUtilities
+    public class RegexUtilities
     {
         public static bool IsSafePassword(string password)
         {
