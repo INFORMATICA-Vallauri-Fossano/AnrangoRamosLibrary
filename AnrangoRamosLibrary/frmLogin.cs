@@ -1,33 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
-using System.Data.SqlClient;
 
 namespace AnrangoRamosLibrary
 {
-    public partial class UCLogin: UserControl
+    public partial class frmLogin : Form
     {
-        public UCLogin()
+        public frmLogin()
         {
             InitializeComponent();
             ResetEmailPassword();
         }
-        private string email;
-        private string password;
-        private bool validCredentials=false;
-        public UCLogin(string guideText)
+        public frmLogin(string guideText)
         {
             lblGuide.Text = guideText;
             ResetEmailPassword();
         }
-        public string Email { get => email;}
+        private string email;
+        private string password;
+        private bool validCredentials = false;
+        public string Email { get => email; }
         //public string Password { get => password;}
         public bool ValidCredentials { get => validCredentials; }
 
@@ -42,7 +42,7 @@ namespace AnrangoRamosLibrary
                 if (ValidateCredentials(email, password))
                 {
                     validCredentials = true;
-                MessageBox.Show("Login Effettuato con Successo!");
+                    MessageBox.Show("Login Effettuato con Successo!");
                 }
                 else throw new Exception("Email e Password non Corrispondono");
 
@@ -54,13 +54,7 @@ namespace AnrangoRamosLibrary
             }
         }
 
-        private bool ValidateCredentials(string email, string password)
-        {
-            bool valid = false;
-            using(SqlConnection conn=new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Achar\\source\\repos\\esAutoNoleggi\\esAutoNoleggi\\bin\\Debug\\noleggi.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"))
-
-            return valid;
-        }
+        virtual public bool ValidateCredentials(string email, string password) { return false; }
 
         private void ResetEmailPassword()
         {
@@ -70,8 +64,8 @@ namespace AnrangoRamosLibrary
         }
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
-            if(IsKeyLocked(Keys.CapsLock)) lblCapsLock.Visible = true;
-                else lblCapsLock.Visible = false;
+            if (IsKeyLocked(Keys.CapsLock)) lblCapsLock.Visible = true;
+            else lblCapsLock.Visible = false;
         }
     }
 }

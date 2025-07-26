@@ -42,12 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RegexUtilities.cs" />
+    <Compile Include="SqlFillControls.cs" />
     <Compile Include="UCDiagrammaClasse.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -67,9 +74,30 @@
       <DependentUpon>UCLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCCmb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCmb.Designer.cs">
+      <DependentUpon>UCCmb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNud.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNud.Designer.cs">
+      <DependentUpon>UCNud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTxt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTxt.Designer.cs">
+      <DependentUpon>UCTxt.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,6 +110,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCLogin.resx">
       <DependentUpon>UCLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCmb.resx">
+      <DependentUpon>UCCmb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNud.resx">
+      <DependentUpon>UCNud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTxt.resx">
+      <DependentUpon>UCTxt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
